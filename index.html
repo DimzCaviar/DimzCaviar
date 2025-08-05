@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DimzCaviar - Personal Website</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      color: white;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+    video#bg-video {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background: rgba(0,0,0,0.6);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+    nav a {
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    section {
+      min-height: 100vh;
+      backdrop-filter: brightness(0.7);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1, h2 {
+      margin-bottom: 1rem;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      width: 100%;
+      max-width: 1200px;
+    }
+    .project-card {
+      background: rgba(0,0,0,0.5);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    footer {
+      background: rgba(0,0,0,0.8);
+      text-align: center;
+      padding: 1rem;
+    }
+    a:hover {
+      color: cyan;
+    }
+  </style>
+</head>
+<body>
+  <!-- Background video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="https://files.catbox.moe/doapo5.mp4" type="video/mp4">
+  </video>
+
+  <!-- Autoplay music using YouTube embed -->
+  <iframe
+    width="0"
+    height="0"
+    src="https://www.youtube.com/embed/16SmnWr6kFY?autoplay=1&loop=1&playlist=16SmnWr6kFY"
+    frameborder="0"
+    allow="autoplay"
+    allowfullscreen
+    style="position:absolute; left:-9999px; top:-9999px;">
+  </iframe>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home">
+    <h1>DimzCaviar</h1>
+    <h2>Code like Water</h2>
+    <p>Developer | Creative | Digital Explorer</p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>Project One</h3>
+        <p>Deskripsi singkat tentang project satu.</p>
+        <a href="#">Lihat Selengkapnya</a>
+      </div>
+      <div class="project-card">
+        <h3>Project Two</h3>
+        <p>Deskripsi singkat tentang project dua.</p>
+        <a href="#">Lihat Selengkapnya</a>
+      </div>
+      <div class="project-card">
+        <h3>Project Three</h3>
+        <p>Deskripsi singkat tentang project tiga.</p>
+        <a href="#">Lihat Selengkapnya</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: dimzcaviar@example.com</p>
+    <p>Telegram: @DimzCaviar</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 DimzCaviar - All rights reserved
+  </footer>
+</body>
+</html>
