@@ -84,9 +84,10 @@
   </video>
 
   <!-- Autoplay music using YouTube embed -->
- <audio autoplay loop>
-  <source src="vierra_tl.mp3" type="audio/mp3" />
- </audio>
+ <audio id="bgmusic" autoplay loop muted>
+  <source src="vierra_tl.mp3" type="audio/mpeg">
+</audio>
+<button onclick="document.getElementById('bgmusic').muted = false;">Mulai Musik</button>
 
   <!-- Navigation -->
   <nav>
