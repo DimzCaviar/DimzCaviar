@@ -100,7 +100,18 @@
     <div style="margin-top: 1.5rem; display: flex; flex-direction: column; align-items: center;">
     <audio id="bgmusic" autoplay loop muted>
   <source src="vierra_tl.mp3" type="audio/mpeg" />
-    </audio>
+  Browser tidak mendukung audio.
+</audio>
+
+<script>
+  document.addEventListener('click', function () {
+    const audio = document.getElementById('bgmusic');
+    audio.muted = false;
+    audio.play().catch((e) => {
+      console.log('Autoplay gagal:', e);
+    });
+  });
+</script>
 </div>
   </section>
 
