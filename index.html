@@ -103,23 +103,50 @@
   Browser tidak mendukung audio.
 </audio>
 
+<!-- Tombol musik -->
+<button id="music-btn" style="
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 99;
+  padding: 10px 16px;
+  background-color: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  backdrop-filter: blur(6px);
+">
+  🎵 Nyalakan Musik
+</button>
+
 <script>
-  // hanya jalankan sekali
   let played = false;
 
   function startAudio() {
     if (played) return;
+
     const audio = document.getElementById('bgmusic');
+    const button = document.getElementById('music-btn');
+
+    // Coba mainkan
     audio.muted = false;
-    audio.play().catch((e) => {
-      console.log('Autoplay gagal:', e);
+    audio.play().then(() => {
+      console.log("Audio diputar!");
+      button.style.display = 'none'; // Sembunyikan tombol
+      played = true;
+    }).catch((e) => {
+      console.warn("Autoplay gagal:", e);
     });
-    played = true;
   }
 
-  // trigger saat user klik atau scroll
+  // Event scroll dan click
   document.addEventListener('click', startAudio);
   window.addEventListener('scroll', startAudio);
+
+  // Event tombol
+  document.getElementById('music-btn').addEventListener('click', startAudio);
 </script>
 </div>
   </section>
