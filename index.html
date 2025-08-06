@@ -104,13 +104,22 @@
 </audio>
 
 <script>
-  document.addEventListener('click','scroll', function () {
+  // hanya jalankan sekali
+  let played = false;
+
+  function startAudio() {
+    if (played) return;
     const audio = document.getElementById('bgmusic');
     audio.muted = false;
     audio.play().catch((e) => {
       console.log('Autoplay gagal:', e);
     });
-  });
+    played = true;
+  }
+
+  // trigger saat user klik atau scroll
+  document.addEventListener('click', startAudio);
+  window.addEventListener('scroll', startAudio);
 </script>
 </div>
   </section>
